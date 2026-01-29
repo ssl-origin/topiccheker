@@ -1,0 +1,169 @@
+/* Optional: adjustment for the home icon spacing if needed */
+.breadcrumbs .icon {
+	margin-right: 2px;
+}
+
+/* Ensure icon and text are vertically aligned */
+.breadcrumbs {
+	display: inline-flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+/* MAIN CONTAINER
+   - Removed overflow properties (to let the arrow show)
+   - Removed max-height (the list will handle height)
+*/
+#sebo-topic-check-container {
+	background: #fff;
+	border: 1px solid #12a3ea;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	margin-top: 10px;
+	margin-left: 15px;
+	position: absolute;
+	width: 90%;
+	z-index: 1000;
+	/* IMPORTANT: No overflow hidden/auto here, or the arrow gets clipped! */
+}
+
+/* 1. The border of the arrow */
+#sebo-topic-check-container:before {
+	content: '';
+	position: absolute;
+	top: -11px;
+	left: 25%;
+	transform: translateX(-50%);
+	border-bottom: 11px solid #12a3ea;
+	border-left: 11px solid transparent;
+	border-right: 11px solid transparent;
+	width: 0;
+	height: 0;
+	z-index: 1001;
+	pointer-events: none;
+}
+
+/* 2. The fill of the arrow */
+#sebo-topic-check-container:after {
+	content: '';
+	position: absolute;
+	top: -10px;
+	left: 25%;
+	transform: translateX(-50%);
+	border-bottom: 10px solid #ecf3f7;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	width: 0;
+	height: 0;
+	z-index: 1002;
+	pointer-events: none;
+}
+@media (max-width: 700px){
+     #sebo-topic-check-container:after {
+		left: 15%;
+	}
+	 #sebo-topic-check-container:before {
+		left: 15%;
+	 }
+}
+
+/* THE LIST (UL)
+   - This now handles the scrolling
+   - We add border-radius to corners so they don't overflow the container
+*/
+#sebo-topic-check-list {
+	list-style: none; /* Safety */
+	margin: 0;        /* Safety */
+	padding: 0;       /* Safety */
+
+	/* SCROLL LOGIC MOVED HERE */
+	max-height: 300px;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	/* Maintain rounded corners */
+	border-radius: 5px;
+}
+
+/* Stile scrollbar personalizzato (Opzionale, per Chrome/Safari/Edge - rende lo scroll più elegante) */
+#sebo-topic-check-list::-webkit-scrollbar {
+    width: 8px;
+}
+#sebo-topic-check-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+#sebo-topic-check-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 5px;
+}
+#sebo-topic-check-list::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+/* List Item Styles */
+#sebo-topic-check-list li {
+	border-bottom: 1px solid #fff;
+	cursor: pointer;
+	padding: 8px 10px;
+	transition: background-color 0.1s;
+}
+
+/* ZEBRA STRIPING */
+
+/* Odd rows - Light Blue (Matches arrow) */
+#sebo-topic-check-list li:nth-child(odd) {
+	background-color: #ecf3f7;
+}
+
+/* Even rows - Darker Blue */
+#sebo-topic-check-list li:nth-child(even) {
+	background-color: #e1ebf2;
+}
+
+/* HOVER - Yellowish */
+#sebo-topic-check-list li:hover {
+	background-color: #ffffd2 !important;
+}
+
+/* Link Styles */
+#sebo-topic-check-list li a.topic-check-link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-decoration: none;
+	width: 100%;
+}
+
+/* Content Layout */
+.topic-check-title-container {
+	flex: 1;
+	padding-right: 10px;
+}
+
+/* Container for the icon (Right side) */
+.topic-check-open-text {
+	display: flex;          /* Enables flexbox alignment */
+	align-items: center;    /* Vertically centers the icon */
+	color: #aaa;            /* Subtle grey color for the icon */
+	flex-shrink: 0;         /* Prevents icon from shrinking if text is long */
+	margin-left: 10px;      /* Safety gap between text and icon */
+}
+
+/* Icon Specific Style */
+.tc-external-link-icon {
+	font-size: 1.1em;       /* Slightly larger since it stands alone */
+}
+
+/* Hover effect on the link triggers icon color change (Optional but nice) */
+#sebo-topic-check-list li:hover .topic-check-open-text {
+	color: #555;            /* Darker grey on hover */
+}
+
+/* Breadcrumbs Separator */
+.breadcrumbs .crumb:before {
+	content: '\2039';
+	font-weight: bold;
+	padding: 0 0.5em;
+	color: #555;
+}

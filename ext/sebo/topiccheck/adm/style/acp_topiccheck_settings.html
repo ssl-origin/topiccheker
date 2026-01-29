@@ -1,0 +1,49 @@
+{% include 'overall_header.html' %}
+
+<h1>{{ lang('ACP_TOPICCHECK_SETTINGS_TITLE') }}</h1>
+
+<form id="acp_topiccheck_settings" method="post" action="{{ U_ACTION }}">
+
+	<fieldset>
+		<legend>{{ lang('ACP_TOPICCHECK_FORUMS') }}</legend>
+		<p>{{ lang('ACP_TOPICCHECK_FORUMS_EXPLAIN') }}</p>
+
+		<table class="table1 zebra-table">
+		<thead>
+			<tr>
+				<th>{{ lang('FORUM') }}</th>
+				<th style="width: 100px; text-align: center;">{{ lang('ACTIVE') }}</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for forum in loops.forums %}
+			<tr>
+				<td>
+					{% if forum.IS_CHILD %}
+						<span style="padding-left: 20px;">{{ forum.NAME }}</span>
+					{% else %}
+						<strong>{{ forum.NAME }}</strong>
+					{% endif %}
+				</td>
+				<td style="text-align: center;">
+					<input type="checkbox" name="forum_ids[]" value="{{ forum.ID }}" {% if forum.S_ACTIVE %}checked="checked"{% endif %} />
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="2" style="text-align: center;">{{ lang('NO_FORUMS') }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+		</table>
+	</fieldset>
+
+	<fieldset class="submit-buttons">
+		<legend>{{ lang('SUBMIT') }}</legend>
+		<input class="button1" type="submit" id="submit_settings" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
+		{{ S_FORM_TOKEN }}
+	</fieldset>
+
+</form>
+
+{% include 'overall_footer.html' %}

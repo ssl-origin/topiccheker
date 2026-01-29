@@ -1,0 +1,3 @@
+sebo_topiccheck_search:
+    path: /sebo/topiccheck/search
+    defaults: { _controller: sebo.topiccheck.controller.search:handle }

@@ -1,0 +1,32 @@
+services:
+    sebo.topiccheck.controller.search:
+        class: sebo\topiccheck\controller\search
+        arguments:
+            - '@language'
+            - '@dbal.conn'
+            - '@request'
+            - '@controller.helper'
+            - '@user'
+            - '@auth'
+            - '%core.table_prefix%'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    sebo.topiccheck.controller.acp:
+        class: sebo\topiccheck\controller\acp_controller
+        arguments:
+            - '@language'
+            - '@request'
+            - '@template'
+            - '@user'
+            - '%core.table_prefix%'
+            - '@dbal.conn'
+
+    sebo.topiccheck.listener:
+        class: sebo\topiccheck\event\main_listener
+        arguments:
+            - '@template'
+            - '@controller.helper'
+            - '@user'
+        tags:
+            - { name: event.listener }

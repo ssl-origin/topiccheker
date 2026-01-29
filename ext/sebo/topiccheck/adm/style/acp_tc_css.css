@@ -1,0 +1,71 @@
+/* Container for the info box */
+.tc-info-box {
+	display: flex; /* This makes the children (icon and text) sit side-by-side */
+	background-color: #FFFFFF; /* White background for the text area */
+	border: 1px solid #C9D2D8; /* Standard phpBB border color to blend in */
+	margin-bottom: 15px;
+}
+
+/* The orange strip on the left */
+.tc-info-icon {
+	background-color: #E67E22; /* Orange background */
+	color: #FFFFFF; /* White icon color */
+	min-width: 60px; /* Width of the orange strip */
+	display: flex;
+	align-items: center; /* Vertically centers the icon */
+	justify-content: center; /* Horizontally centers the icon */
+	font-size: 26px; /* Icon size */
+	flex-shrink: 0; /* Prevents the strip from shrinking if text is long */
+}
+
+/* The text area */
+.tc-info-text {
+	padding: 12px 15px;
+	flex-grow: 1; /* Takes up the remaining space */
+}
+
+.tc-info-text p {
+	margin: 0; /* Removes default paragraph margin for better alignment */
+	font-size: 1em; /* Slightly larger text for readability */
+}
+/* Container for the 3 steps */
+.tc-steps-container
+{
+	display: flex;
+	justify-content: space-between;
+	gap: 20px; /* Space between the boxes */
+	margin-top: 20px;
+}
+
+/* Individual step box */
+.tc-step-box
+{
+	flex: 1; /* Makes all 3 boxes equal width */
+	background-color: #ECF3F7; /* Light blue/grey standard phpBB background */
+	border: 1px solid #C9D2D8;
+	padding: 15px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+/* The number circle */
+.tc-step-number
+{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #058501;	 /* Green background */
+	color: #FFFFFF;
+	border-radius: 50%;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/* The text inside the step */
+.tc-step-text
+{
+	display: block;
+	font-weight: 600;
+	color: #333;
+}
