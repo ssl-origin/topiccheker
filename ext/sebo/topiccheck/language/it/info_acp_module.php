@@ -21,7 +21,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, [
 	'PP_ME_PR'				=> 'Offrimi una birra per questa estensione',
-	'PP_ME_EXT_PR'			=> '<label>Fai una donazione per questa estensione:</label><br><span>Questa estensione è completamente gratuita. E\' un progetto su cui ho speso del tempo per imparare e condividere con la community phpBB. Se ti piace questa estensione, o ha migliorato il tuo forum, prendi in considerazione l\'idea di <a href="https://www.paypal.com/donate/?hosted_button_id=GS3T9MFDJJGT4" target="_blank" rel="noreferrer noopener">offrirmi una birra</a>. Grazie mille anche solo per aver scaricato PostReaction!</span>',
+	'PP_ME_EXT_PR'			=> '<label>Fai una donazione per questa estensione:</label><br><span>Questa estensione è completamente gratuita. E\' un progetto su cui ho speso del tempo per imparare e condividere con la community phpBB. Se ti piace questa estensione, o ha migliorato il tuo forum, prendi in considerazione l\'idea di <a href="%s" target="_blank" rel="noreferrer noopener">offrirmi una birra</a>. Grazie mille anche solo per aver scaricato TopicChecker!</span>',
 	'PP_ME_EXT_ALT'			=> 'Dona con PayPal',
 	'ACP_TOPICCHECK_TITLE' => 'Topic Checker',
 	'ACP_TOPICCHECK_SETTINGS_TITLE' => 'Topic Check - Impostazioni generali',

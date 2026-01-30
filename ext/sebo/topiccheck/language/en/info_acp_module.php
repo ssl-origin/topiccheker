@@ -22,7 +22,7 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, [
 	'ACP_TOPICCHECK_TITLE' => 'Topic Checker',
 	'PP_ME_PR'				=> 'Buy me a beer for creating this extension',
-	'PP_ME_EXT_PR'			=> '<label>Make a donation for this extension:</label><br><span>This extension is completely free. It is a project that I spend my time on for the enjoyment and use of the phpBB community. If you enjoy using this extension, or if it has benefited your forum, please consider <a href="%s" target="_blank" rel="noreferrer noopener">buying me a beer</a>. It would be greatly appreciated. Thank you for downloading PostReaction!</span>',
+	'PP_ME_EXT_PR'			=> '<label>Make a donation for this extension:</label><br><span>This extension is completely free. It is a project that I spend my time on for the enjoyment and use of the phpBB community. If you enjoy using this extension, or if it has benefited your forum, please consider <a href="%s" target="_blank" rel="noreferrer noopener">buying me a beer</a>. It would be greatly appreciated. Thank you for downloading TopicChecker!</span>',
 	'PP_ME_EXT_ALT'			=> 'Donate via PayPal',
 	'ACP_TOPICCHECK_SETTINGS_TITLE'          => 'Topic Checker - General settings',
 	'ACP_TOPICCHECK_WORDS_TITLE'          => 'Topic Checker - Low Relevance Words',
